@@ -23,19 +23,22 @@ If TPM cannot find `config.yaml`, it will use default paths (like `C:\Path\To\BF
    ```bash
    pip install -r requirements.txt
    
-**Configure**:
+Configure:
 
 Copy config.example.yaml to config.yaml.
 
-Open config.yaml and set the real paths for your server:
-process:
-    enabled: true
-    exe_path: "C:/Program Files (x86)/Electronic Arts/Battlefield 2142 Server/BF2142_w32ded.exe"
-    work_dir: "C:/Program Files (x86)/Electronic Arts/Battlefield 2142 Server"
-    args: ["+config", "mods/bf2142/settings/serversettings.con", "+maplist", "mods/bf2142/settings/maplist.con", "+dedicated"]
+Open config.yaml and set the real paths for your server.
 
-**Run**:
-python tantopm.py
+Example config block:
+```yaml process:
+  enabled: true
+  exe_path: "C:/Program Files (x86)/Electronic Arts/Battlefield 2142 Server/BF2142_w32ded.exe"
+  work_dir: "C:/Program Files (x86)/Electronic Arts/Battlefield 2142 Server"
+  args: ["+config", "mods/bf2142/settings/serversettings.con", "+maplist", "mods/bf2142/settings/maplist.con", "+dedicated"]
+```
+
+Run:
+```bash python tantopm.py ```
 
 ## How it works
 
