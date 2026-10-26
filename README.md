@@ -22,3 +22,28 @@ If TPM cannot find `config.yaml`, it will use default paths (like `C:\Path\To\BF
 3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
+   
+**Configure**:
+
+Copy config.example.yaml to config.yaml.
+
+Open config.yaml and set the real paths for your server:
+process:
+    enabled: true
+    exe_path: "C:/Program Files (x86)/Electronic Arts/Battlefield 2142 Server/BF2142_w32ded.exe"
+    work_dir: "C:/Program Files (x86)/Electronic Arts/Battlefield 2142 Server"
+    args: ["+config", "mods/bf2142/settings/serversettings.con", "+maplist", "mods/bf2142/settings/maplist.con", "+dedicated"]
+
+**Run**:
+python tantopm.py
+
+## How it works
+
+TPM checks if BF2142_w32ded.exe is running every 10 seconds.
+
+If the process is missing, it waits 15 seconds (configurable) and starts it using the arguments provided in config.yaml.
+
+If the server crashes 5 times within an hour, TPM will stop restarting it to prevent spam.
+
+## Note
+If you are using TANTO Control Deck (TCD) on the same machine, you can enable the built-in Process Manager in config.yaml instead of running TPM separately.
