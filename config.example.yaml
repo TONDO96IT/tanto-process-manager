@@ -1,0 +1,38 @@
+# ==========================================
+# TANTO Process Manager (TPM) Configuration
+# ==========================================
+# Copy this file to config.yaml and fill in your details.
+
+process:
+  # Enable or disable the auto-restart feature
+  enabled: true
+  
+  # Absolute path to the game server executable
+  exe_path: "C:/Path/To/BF2142_w32ded.exe"
+  
+  # Working directory (where the server exe is located)
+  work_dir: "C:/Path/To/BF2142"
+  
+  # Startup arguments (usually +config, +maplist, +dedicated)
+  args:
+    - "+config"
+    - "mods/bf2142/settings/serversettings.con"
+    - "+maplist"
+    - "mods/bf2142/settings/maplist.con"
+    - "+dedicated"
+    
+  # How often to check if the server is alive (seconds)
+  check_interval_sec: 10
+  
+  # How long to wait before restarting (seconds)
+  restart_delay_sec: 15
+  
+  # Maximum restarts per hour (prevents infinite crash loops)
+  max_restarts_per_hour: 5
+  
+  # Where to save the game server's console output
+  stdout_log: "logs/bf2142_stdout.log"
+
+logging:
+  level: "INFO"
+  file: "logs/tpm.log"
