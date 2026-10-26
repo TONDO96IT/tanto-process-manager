@@ -25,9 +25,9 @@ If TPM cannot find `config.yaml`, it will use default paths (like `C:\Path\To\BF
    
 ## Configure:
 
-Copy config.example.yaml to config.yaml.
+- Copy config.example.yaml to config.yaml.
 
-Open config.yaml and set the real paths for your server.
+- Open config.yaml and set the real paths for your server.
 
 Example config block:
 ```yaml
